@@ -98,8 +98,7 @@ INSERT INTO
         post_id,
         content
     )
-VALUES
-(
+VALUES (
         "c001",
         "u003",
         "p001",
@@ -118,4 +117,51 @@ CREATE TABLE
         like INTEGER NOT NULL,
         Foreign Key (user_id) REFERENCES users(id),
         Foreign Key (comment_id) REFERENCES comments(id)
+    );
+
+SELECT
+    comments.id,
+    comments.creator_id,
+    comments.post_id,
+    comments.content,
+    comments.likes,
+    comments.dislikes,
+    comments.created_at,
+    comments.updated_at
+FROM comments
+    INNER JOIN posts ON comments.post_id = posts.id
+WHERE post_id = "p001";
+
+SELECT
+comments.id,
+    comments.creator_id,
+    comments.post_id,
+    comments.content,
+    comments.likes,
+    comments.dislikes,
+    comments.created_at,
+    comments.updated_at,
+    users.name AS creator_name
+FROM comments
+INNER JOIN users ON comments.creator_id = users.id
+INNER JOIN posts ON comments.post_id = posts.id
+WHERE comments.post_id = "p001";
+
+INSERT INTO
+    comments(
+        id,
+        creator_id,
+        post_id,
+        content
+    )
+VALUES (
+        "c003",
+        "u003",
+        "p001",
+        "SEGUNDO a comentar nessa rede!"
+    ), (
+        "c004",
+        "u001",
+        "p001",
+        "To gostando tbm"
     );
