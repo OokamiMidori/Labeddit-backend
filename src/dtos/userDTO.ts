@@ -1,4 +1,4 @@
-import { PostModel } from "../types"
+import { PostModel, CommentModel } from "../types"
 
 export interface SignupInputDTO {
     name: unknown,
@@ -42,6 +42,36 @@ export interface DeletePostInputDTO {
 }
 
 export interface LikeOrDislikePostInputDTO {
+    idToLikeOrDislike: string,
+    token: string | undefined,
+    like: unknown
+}
+
+export interface getCommentsInputDTO {
+    token: string|undefined,
+    postId: string
+}
+
+export type getCommentsOutputDTO = CommentModel[]
+
+export interface CreateCommentDTO {
+    token: string | undefined,
+    postId: string | undefined,
+    content: string | undefined
+}
+
+export interface editCommentIpuntDTO {
+    idToEdit: string,
+    token: string | undefined,
+    content: string | undefined
+}
+
+export interface deleteCommentInputDTO {
+    idToDelete: string,
+    token: string | undefined
+}
+
+export interface LikeOrDislikeCommentInputDTO {
     idToLikeOrDislike: string,
     token: string | undefined,
     like: unknown
