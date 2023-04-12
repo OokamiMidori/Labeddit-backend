@@ -1,7 +1,7 @@
 import  express  from "express"
 import { CommentController } from "../controller/commentController"
 import { CommentBusiness } from "../business/CommentBusiness"
-import { CommentDataBase } from "../database/CommentDataBase"
+import { CommentDatabase } from "../database/CommentDataBase"
 import { IdGenerator } from "../services/IdGenerator"
 import { TokenManager } from "../services/TokenManager"
 import PostDatabase from "../database/PostDataBase"
@@ -10,7 +10,7 @@ export const commentRouter = express.Router()
 
 const commentController = new CommentController(
     new CommentBusiness(
-        new CommentDataBase(),
+        new CommentDatabase(),
         new IdGenerator(),
         new TokenManager(),
         new PostDatabase()
