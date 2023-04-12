@@ -1,4 +1,4 @@
-import { CommentDataBase } from "../database/CommentDataBase";
+import { CommentDatabase } from "../database/CommentDataBase";
 import PostDatabase from "../database/PostDataBase";
 import { CreateCommentDTO, LikeOrDislikeCommentInputDTO, deleteCommentInputDTO, editCommentIpuntDTO, getCommentsInputDTO, getCommentsOutputDTO } from "../dtos/userDTO";
 import { BadRequestError } from "../errors/BadRequestError";
@@ -10,7 +10,7 @@ import { CommentDB, CommentWithCreatorDB, Comment_Like_DislikeDB, POST_LIKE, USE
 
 export class CommentBusiness {
     constructor(
-        private commentDatabase: CommentDataBase,
+        private commentDatabase: CommentDatabase,
         private idGenerator: IdGenerator,
         private tokenManager: TokenManager,
         private postDatabase: PostDatabase
