@@ -20,3 +20,9 @@ Api desenvolvida para funcionar como uma rede social basica onde as pessoas pode
 
 # Postman
 Link da documentação: https://documenter.getpostman.com/view/24460628/2s93eeS9nE
+
+
+## Frontend
+
+Para ver o frontend do projeto com um link funcional,\
+acesse o link [https://github.com/OokamiMidori/Labeddit-frontend](https://github.com/OokamiMidori/Labeddit-frontend)
