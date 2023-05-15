@@ -15,3 +15,6 @@ Geração de hashes
 Autenticação e autorização
 Roteamento
 Jest
+
+
+Link do postman: https://documenter.getpostman.com/view/24460628/2s93eeS9nE
